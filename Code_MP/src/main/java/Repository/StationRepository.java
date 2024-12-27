@@ -43,7 +43,7 @@ public class StationRepository {
     }
 
     public void updateStation(Station station) {
-        String sql ="Update clients Set address=?, telephone=? , last_name=?, first_name=?, patronymic=?";
+        String sql ="Update station Set address=?, telephone=? , station_name=?";
         try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
             preparedStatement.setString(1, station.getAddress());
             preparedStatement.setString(2, station.getTelephone());
