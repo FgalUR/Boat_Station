@@ -23,9 +23,9 @@ public class ClientService {
         return clientRepository.getAllClients();
     }
 
-    public void updateClient(int id, String firstName, String lastName, String patronymic
+    public void updateClient( String firstName, String lastName, String patronymic
             ,String telephone, String address) throws SQLException {
-        Client client = new Client(id ,firstName, lastName, patronymic,telephone,address);
+        Client client = new Client(0,firstName, lastName, patronymic,telephone,address);
         clientRepository.updateClient(client);
     }
 
