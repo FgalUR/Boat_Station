@@ -52,18 +52,18 @@ public class EngineersRepository {
     }
 
     public void updateEngineer(Engineer engineer) {
-        String sql ="Update clients Set address=?, telephone=? , last_name=?, first_name=?, patronymic=?";
+        String sql ="Update engineers Set salary=?, category=? , education=?, telephone=?, address=?" +
+                ",last_name=?, first_name=?, patronimic=?";
         try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
             //Подогнать
-            preparedStatement.setInt(1, employee.getSalary());
-            preparedStatement.setString(2, employee.getTelephone());
-            preparedStatement.setString(3, employee.getEducation());
-            preparedStatement.setString(4, employee.getAddress());
-            preparedStatement.setString(5, employee.getPosition());
-            preparedStatement.setString(6, employee.getLastName());
-            preparedStatement.setString(7, employee.getFirstName());
-            preparedStatement.setString(8, employee.getPatronymic());
-            preparedStatement.setInt(9, employee.getStation_id());
+            preparedStatement.setInt(1, engineer.getSalary());
+            preparedStatement.setString(2, engineer.getCategory());
+            preparedStatement.setString(3, engineer.getEducation());
+            preparedStatement.setString(4, engineer.getTelephone());
+            preparedStatement.setString(5, engineer.getAddress());
+            preparedStatement.setString(6, engineer.getLastName());
+            preparedStatement.setString(7, engineer.getFirstName());
+            preparedStatement.setString(8, engineer.getPatronymic());
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
