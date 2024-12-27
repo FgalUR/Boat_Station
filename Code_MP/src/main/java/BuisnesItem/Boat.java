@@ -1,9 +1,10 @@
 package BuisnesItem;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
-
+@AllArgsConstructor
 @ToString
 @Getter
 public class Boat {
@@ -22,4 +23,5 @@ public class Boat {
     private int eng_id;
     @Setter
     private int station_id;
+
 }
