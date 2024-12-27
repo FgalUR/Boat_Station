@@ -6,7 +6,7 @@ import lombok.ToString;
 
 @ToString
 @Getter
-public class Engineers {
+public class Engineer {
     private int eng_id;
     @Setter
     private int salary;
