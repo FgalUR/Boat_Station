@@ -11,7 +11,8 @@ import java.util.List;
 public class StationRepository {
     private final Connection connection;
     public void addStation(Station station) {
-        String sql = "";
+        String sql = "INSERT INTO boats (name, number, brand , variety, client_id, engineer_id, boat_station_id " +
+                "VALUES (?, ?, ?, ?, ?, ?, ?)";
         try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
             //Подогнать
             preparedStatement.setString();

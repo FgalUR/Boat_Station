@@ -13,8 +13,7 @@ public class BoatRepository {
     private final Connection connection;
 
     public void addBoat(Boat boat) {
-        String sql = "INSERT INTO boats (name, number, brand , variety, client_id, engineer_id, boat_station_id" +
-                ") VALUES (?, ?, ?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO boats (name, number, brand , variety, client_id, engineer_id, boat_station_id VALUES (?, ?, ?, ?, ?, ?, ?)";
         try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
             preparedStatement.setString(1, boat.getName());
             preparedStatement.setString(2, boat.getNumber());
