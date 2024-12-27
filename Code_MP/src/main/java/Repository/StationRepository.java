@@ -10,16 +10,15 @@ import java.util.List;
 @AllArgsConstructor
 public class StationRepository {
     private final Connection connection;
+
     public void addStation(Station station) {
-        String sql = "INSERT INTO boats (name, number, brand , variety, client_id, engineer_id, boat_station_id " +
-                "VALUES (?, ?, ?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO boat_station (address, telephone," +
+                " station_name" +
+                "VALUES (?, ?, ?)";
         try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
-            //Подогнать
-            preparedStatement.setString();
-            preparedStatement.setString();
-            preparedStatement.setString();
-            preparedStatement.setString();
-            preparedStatement.setString();
+            preparedStatement.setString(1, station.getAddress());
+            preparedStatement.setString(2, station.getTelephone());
+            preparedStatement.setString(3, station.getName());
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
@@ -32,7 +31,9 @@ public class StationRepository {
         try (Statement statement = connection.createStatement();
              ResultSet resultSet = statement.executeQuery(sql)) {
             while (resultSet.next()) {
-                /// stations.add(new Station(!Пропиши все получаемые параметры!resultSet.get));
+                stations.add(new Station(resultSet.getInt("boat_station_id"),
+                        resultSet.getString("telephone"),
+                        resultSet.getString("station_name"),resultSet.getString("address")));
             }
 
         } catch (SQLException e) {
@@ -42,22 +43,20 @@ public class StationRepository {
     }
 
     public void updateStation(Station station) {
-        String sql = "";
+        String sql ="Update clients Set address=?, telephone=? , last_name=?, first_name=?, patronymic=?";
         try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
-            //Подогнать
-            preparedStatement.setString();
-            preparedStatement.setString();
-            preparedStatement.setString();
-            preparedStatement.setString();
-            preparedStatement.setString();
+            preparedStatement.setString(1, station.getAddress());
+            preparedStatement.setString(2, station.getTelephone());
+            preparedStatement.setString(3, station.getName());
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
     }
 
     public void deleteStation(int id) {
-        String sql = "";
+        String sql ="Delete from clients where id=?";
         try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+            preparedStatement.setInt(1,id);
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
