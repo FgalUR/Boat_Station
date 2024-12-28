@@ -48,13 +48,14 @@ public class ClientRepository {
     }
 
     public void updateClient(Client client) {
-        String sql = "Update clients Set address=?, telephone=? , last_name=?, first_name=?, patronymic=?";
+        String sql = "Update clients Set address=?, telephone=? , last_name=?, first_name=?, patronymic=? Where id =?";
         try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
             preparedStatement.setString(1, client.getAddress());
             preparedStatement.setString(2, client.getTelephone());
             preparedStatement.setString(3, client.getLastName());
             preparedStatement.setString(4, client.getFirstName());
             preparedStatement.setString(5, client.getPatronymic());
+            preparedStatement.setInt(6, client.getClient_id());
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
