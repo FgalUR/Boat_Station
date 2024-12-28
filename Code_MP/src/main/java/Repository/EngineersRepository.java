@@ -1,6 +1,6 @@
 package Repository;
 
-import BuisnesItem.Boat;
+
 import People.Engineer;
 import lombok.AllArgsConstructor;
 
@@ -42,7 +42,7 @@ public class EngineersRepository {
                         resultSet.getInt("salary"),resultSet.getString("category"),
                         resultSet.getString("education"), resultSet.getString("telephone"),
                         resultSet.getString("address"),resultSet.getString("last_name"),
-                        resultSet.getString("first_name"), resultSet.getString("partronymic"))));
+                        resultSet.getString("first_name"), resultSet.getString("partronymic")));
             }
 
         } catch (SQLException e) {
