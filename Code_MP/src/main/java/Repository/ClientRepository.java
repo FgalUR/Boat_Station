@@ -6,6 +6,7 @@ import lombok.AllArgsConstructor;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 @AllArgsConstructor
 public class ClientRepository {
@@ -80,9 +81,14 @@ public class ClientRepository {
         System.out.println("5) Адрес");
         System.out.println("0) Выход из редактирования");
         int res=1;
-        String caseS;
+        Scanner scanner=new Scanner(System.in);
+        String caseS=scanner.nextLine();
         do{
-            switch ()
+            switch (caseS){
+                case "1":
+                    
+                    break;
+            }
 
         }while (res!=0);
     }//все будет оформлерно тут , там ничего не надо
