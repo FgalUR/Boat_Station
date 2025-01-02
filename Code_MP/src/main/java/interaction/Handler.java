@@ -37,7 +37,7 @@ public class Handler {
                 System.out.println();
                 System.out.println("1) Добавить клиента");
                 System.out.println("2) Показать всех клиентов");
-                System.out.println("3) Обновить клиента");
+                System.out.println("3) Редактировать клиента");
                 System.out.println("4) Удалить клиента");
                 System.out.println("0) Выйти");
                 int res = 1;
@@ -85,25 +85,43 @@ public class Handler {
                         System.out.println("5) Адрес");
                         System.out.println("0) Выход из редактирования");
                         int res3 = 1;
+                        int newId;
                         do {
                             String case3 = scanner.nextLine();
                             switch (case3) {
                                 case "1":
                                     System.out.println("Введите id клиента: ");
-                                    int newId=scanner.nextInt();
+                                    newId=scanner.nextInt();
                                     scanner.nextLine();
+                                    System.out.println("Введите новое имя клиента.");
                                     res3 = 1;
                                     break;
                                 case "2":
+                                    System.out.println("Введите id клиента: ");
+                                    newId=scanner.nextInt();
+                                    scanner.nextLine();
+                                    System.out.println("Введите новую Фамилию клинта.");
                                     res3 = 1;
                                     break;
                                 case "3":
+                                    System.out.println("Введите id клиента: ");
+                                    newId=scanner.nextInt();
+                                    scanner.nextLine();
+                                    System.out.println("Введите новое отчетсво клиента.");
                                     res3 = 1;
                                     break;
                                 case "4":
+                                    System.out.println("Введите id клиента: ");
+                                    newId=scanner.nextInt();
+                                    scanner.nextLine();
+                                    System.out.println("Введите новый телефон клиента.");
                                     res3 = 1;
                                     break;
                                 case "5":
+                                    System.out.println("Введите id клиента: ");
+                                    newId=scanner.nextInt();
+                                    scanner.nextLine();
+                                    System.out.println("Введите новый адрес клиента.");
                                     res3 = 1;
                                     break;
                                 case "0":
@@ -113,6 +131,7 @@ public class Handler {
                                 default:
                                     System.out.println("Вы ввели неправильную цифру");
                                     res3 = 1;
+                                    break;
                             }
                         } while (res3 != 0);
                     case "4":

@@ -60,6 +60,32 @@ public class ClientRepository {
             throw new RuntimeException(e);
         }
     }
+    public void updateClient2(Client client) {
+//         String sql = "Update clients Set address=?, telephone=? , last_name=?, first_name=?, patronymic=? Where id =?";
+//        try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+//            preparedStatement.setString(1, client.getAddress());
+//            preparedStatement.setString(2, client.getTelephone());
+//            preparedStatement.setString(3, client.getLastName());
+//            preparedStatement.setString(4, client.getFirstName());
+//            preparedStatement.setString(5, client.getPatronymic());
+//            preparedStatement.setInt(6, client.getClient_id());
+//        } catch (SQLException e) {
+//            throw new RuntimeException(e);
+//        }
+        System.out.println("Что вы хотите изменить?");
+        System.out.println("1) Имя");
+        System.out.println("2) Фамилию");
+        System.out.println("3) Отчетсво");
+        System.out.println("4) Телефон");
+        System.out.println("5) Адрес");
+        System.out.println("0) Выход из редактирования");
+        int res=1;
+        String caseS;
+        do{
+            switch ()
+
+        }while (res!=0);
+    }//все будет оформлерно тут , там ничего не надо
 
     public void deleteClient(int id) {
         String sql = "Delete from clients where id=?";
